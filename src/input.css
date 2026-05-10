@@ -1,1 +1,122 @@
 @import 'tailwindcss';
+
+@layer base {
+  body {
+    @apply bg-black text-white;
+  }
+}
+
+@layer components {
+  .orange-gradient-text {
+    @apply bg-[#FF623E];
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .btn-orange {
+    @apply px-6 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-all bg-[#FF623E];
+  }
+
+  .stat-circle {
+    @apply flex flex-col items-center justify-center rounded-full bg-[#0a0a0a] border border-white/5 shadow-2xl;
+    /* Memberikan efek gradasi halus agar lingkaran terlihat elegan */
+    background: radial-gradient(circle at top, #111 0%, #050505 100%);
+  }
+
+  .process-card {
+    @apply bg-[#08090a] border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-orange-500/30;
+  }
+
+  /* Garis vertikal timeline */
+  .timeline-line {
+    @apply absolute top-10 bottom-10  lg:left-1/2 lg:top-0  w-[2px] bg-[#252B37] to-transparent lg:-translate-x-1/2;
+  }
+
+  .service-card {
+    @apply bg-[#08090a] border border-white/5 rounded-2xl p-8 transition-all duration-300 hover:bg-[#0c0d0e] hover:border-orange-500/20;
+  }
+
+  .industry-tab {
+    @apply flex items-center space-x-4 py-3 cursor-pointer transition-all duration-300;
+  }
+
+  .industry-tab.active {
+    @apply border-l-4 border-orange-600 pl-4 text-white font-bold;
+  }
+
+  .industry-tab.inactive {
+    @apply border-l-4 border-gray-800 pl-4 text-gray-500 hover:text-gray-300;
+  }
+
+  .portfolio-card {
+    @apply cursor-pointer;
+  }
+
+  .portfolio-image-wrapper {
+    @apply relative overflow-hidden rounded-3xl bg-[#111] border border-white/5 transition-all duration-500 group-hover:border-orange-500/30 group-hover:translate-y-[-8px];
+  }
+
+  .portfolio-image {
+    @apply w-full h-auto transition-transform duration-700 group-hover:scale-105;
+  }
+
+  .testimonial-card {
+    @apply bg-[#0b0c0d] border border-white/5 rounded-3xl p-8 pt-12 relative transition-all duration-500 opacity-40 scale-90;
+  }
+
+  /* Class untuk kartu yang sedang aktif/fokus */
+  .testimonial-card.active {
+    @apply opacity-100 scale-100 border-orange-500/30 ring-1 ring-orange-500/20;
+  }
+
+  .quote-icon {
+    @apply absolute -top-5 left-8 w-12 h-12 bg-[#ff542e] rounded-lg flex items-center justify-center text-white text-3xl font-serif shadow-lg shadow-orange-500/40;
+  }
+
+  .profile-img-container {
+    @apply absolute -bottom-8 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full border-4 border-[#030303] overflow-hidden bg-gray-800;
+  }
+
+  .faq-item {
+    @apply border-b border-white/10 py-6 transition-all duration-300;
+  }
+
+  .faq-question {
+    @apply flex justify-between items-center w-full text-left font-bold text-lg hover:text-orange-500 transition-colors;
+  }
+
+  .faq-answer {
+    @apply mt-4 text-gray-500 text-sm leading-relaxed;
+  }
+
+  .cta-orange-card {
+    /* Menggunakan warna terakota sesuai gambar */
+    @apply bg-[#cc5233] rounded-[32px] p-8 flex flex-col items-center text-center;
+  }
+
+  .form-input {
+    @apply w-full bg-transparent border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-orange-500/50 transition-all;
+  }
+
+  .form-label {
+    @apply block text-sm font-semibold mb-2 text-gray-300;
+  }
+
+  /* Custom Checkbox Style */
+  .custom-checkbox {
+    @apply w-5 h-5 rounded border border-white/20 bg-transparent appearance-none checked:bg-orange-600 checked:border-orange-600 cursor-pointer transition-all relative;
+  }
+
+  .custom-checkbox:checked::after {
+    content: '✓';
+    @apply absolute inset-0 flex items-center justify-center text-white text-xs font-bold;
+  }
+
+  .footer-container {
+    @apply bg-[#08090a] border border-white/5 rounded-[32px] p-8 md:p-12;
+  }
+
+  .social-icon {
+    @apply w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-orange-600 hover:border-orange-600 transition-all duration-300;
+  }
+}
